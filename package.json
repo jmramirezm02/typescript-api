@@ -1,7 +1,7 @@
 {
   "name": "typescript-api",
   "version": "1.0.0",
-  "main": "src/server.js",
+  "main": "build/server.js",
   "repository": "https://github.com/jmramirezm02/typescript-api.git",
   "author": "Jose Miguel R <jmramirezm02@liverpool.com.mx>",
   "license": "MIT",
