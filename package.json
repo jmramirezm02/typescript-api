@@ -7,6 +7,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "build": "tsc",
+    "start": "nodemon ./dist/server.js",
+    "prod": "yarn run build && yarn run start",
     "test": "mocha --compilers ts:ts-node/register ./test/*.spec.ts",
     "watch-ts": "tsc -w",
     "watch-node": "nodemon dist/server.js",
