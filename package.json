@@ -12,7 +12,7 @@
     "prod": "npm run build && npm run start",
     "test": "mocha --compilers ts:ts-node/register ./test/*.spec.ts",
     "watch-ts": "tsc -w",
-    "watch-node": "nodemon ./dist/server.js",
+    "watch-node": "nodemon dist/server.js",
     "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript, Node\" -c \"yello.bold, cyan.bold\" \"npm run watch-ts\" \"npm run watch-node\""
   },
   "dependencies": {
