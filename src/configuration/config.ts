@@ -6,7 +6,7 @@ const rootPath = path.normalize(__dirname + '/../../');
 const config = {
     development: {
         db: process.env.DB,
-        port: process.env.PORT,
+        port: process.env.PORT || 8080,
         rootPath: rootPath
     }
 };
