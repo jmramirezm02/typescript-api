@@ -11,7 +11,8 @@ describe('Hello API Request', () => {
     it('should return hello on call', async () => {
         return chai.request(app).get('/')
             .then(res => {
-                chai.expect(res.text).to.eql('Hello')
+                console.log(res);
+                chai.expect(res.status).to.eql(200);
             })
     })
 })
