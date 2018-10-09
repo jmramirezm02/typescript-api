@@ -1,11 +1,6 @@
-import app from './app'
+import app from './app';
+import config from './configuration/config'
 
-const server = app.listen(app.get("port"), () => {
-    console.log(
-        "App is running on http://localhost:%d in %s mode",
-        app.get("port"),
-        app.get("env")
-    )
+app.listen(config.port, () => {
+    console.log('Express server listening on port ' + config.port);
 });
-
-export default server;

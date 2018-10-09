@@ -1,15 +1,22 @@
-import express = require("express");
+import * as express from "express";
+import * as bodyParser from "body-parser";
+import { HomeRoutes } from "./routes/v1/home";
 
-// Our Express APP config
-const app = express(),
-    dotenv = require('dotenv').config();
-console.log('port', process.env.PORT);
-app.set("port", process.env.PORT || 8080);
+class App {
+    public app: express.Application;
+    public homeRoutes: HomeRoutes = new HomeRoutes();
 
-// API Endpoints
-app.get('/', (req, res) => {
-    res.send("Hello");
-});
+    constructor() {
+        this.app = express();
+        this.config();
+        this.homeRoutes.routes(this.app);
+    }
 
-// export our app
-export default app;
+    private config(): void {
+        this.app.use(bodyParser.json());
+        this.app.use(bodyParser.urlencoded({ extended: false }));
+        this.app.use(express.static('src/public'));
+    }
+}
+
+export default new App().app;
